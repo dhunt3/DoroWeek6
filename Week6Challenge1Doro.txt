@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Week6ChallengesDoro
+{
+    class Week6Challenge1
+    {
+        static void Main(string[] args)
+        {
+            
+            Console.WriteLine("Please enter a number and I will tell you if it is a prime.");
+            int num = int.Parse(Console.ReadLine());
+
+            if (checkPrime(num) == true)
+            {
+                Console.WriteLine("Number " + num + " is prime!");
+            }
+            else
+            {
+                Console.WriteLine("Number " + num + " is not a prime.");
+            }
+                
+            Console.ReadLine();
+        }
+        static bool checkPrime(int num)
+        {
+            int counter;
+            for (counter = 1; counter < num; counter++)
+            {
+                if (num != counter && counter != 1 && num % counter == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+}

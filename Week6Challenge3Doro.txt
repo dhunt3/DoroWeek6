@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Week6Challenge3Doro
+{
+    class Week6Challenge3
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a sentence and I'll count your vowels!");
+            string words = Console.ReadLine();
+
+            string result = CountVowels(words);
+
+            Console.WriteLine("You have " + result + " vowels in your sentence!");
+            Console.ReadLine();
+        }
+        static string CountVowels (string words)
+        {
+            string answer = "";
+
+            foreach (char item in words)
+            {
+                if (item == 'a' || item == 'e' || item == 'i' || item == 'o' || item == 'u')
+                {
+                    answer += item;
+                }
+            }
+            int answerLength = answer.Length;
+            string newAnswer = answerLength.ToString();
+            
+            return newAnswer;
+        }
+    }
+}

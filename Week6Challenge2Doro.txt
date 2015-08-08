@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Week6Challenge2Doro
+{
+    class Week6Challenge2
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please enter a decimal number.");
+            string num1 = Console.ReadLine();
+            Console.WriteLine("Please enter an integer number.");
+            int num2 = int.Parse(Console.ReadLine());
+
+            double newNum = Convert.ToDouble(ChoppedDouble(num1, num2));
+            Console.WriteLine("Your new decimal number is: " + newNum);
+            Console.ReadLine();
+        }
+        static string ChoppedDouble(string num1, int num2)
+        {
+            
+            double decNum = Convert.ToDouble(num1);
+            double divNum = Math.Pow(10, num2);
+            double result = (decNum * divNum);
+            string newString = result.ToString();
+            string trimmedline = newString.Remove(num2 + 1);
+
+            string answer = "";
+            answer += char.ToString(trimmedline[0]) + '.';
+            for (int item = 1; item < trimmedline.Length; item++)
+            {
+                answer += char.ToString(trimmedline[item]);
+            }
+
+            return answer;
+        }
+    }
+}
